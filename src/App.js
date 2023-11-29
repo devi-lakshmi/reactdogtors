@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
+import './App.css';
+import OnDuty from './components/OnDuty';
+import Homepage from './pages/Homepage';
+import Title from './components/Title';
+import { Routes,Route } from 'react-router-dom';
+import OnDuty from './componrts/OnDuty';
+import  PatientsList './PatientList';
+const App= () => {
+  
+return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+    <Title />
+      <Routes>
+       <Route path ="/" element={<Homepage/>} />
+       <Route path ="/dogters" element={<OnDuty />} />
+       <Route path ='/patents/' element={<patientsList/>} />
+      
+      </Routes> 
+     
+      <OnDuty />
+    <PatientsList />
     </div>
   );
 }
