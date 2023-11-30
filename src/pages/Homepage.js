@@ -1,15 +1,18 @@
 
-import {Link} from 'react-router-dom';
+import {Link ,Outlet} from 'react-router-dom';
 const Homepage =() =>{
      return(
         <div>
             
-            <h1> Home</h1>
-        <h2>welcome to AMS GPs</h2>
-        <Link to ='/on duty'><button>Who is onduty</button></Link>
-        <Link to = '/patient list'><button>Patients List</button></Link>
+         <h2>welcome to AMS GPs</h2>
+        <nav>
+        <Link to ='/OnDuty'><button>Who is onduty</button></Link>
+        <Link to = '/patientlist'><button>Patients List</button></Link>
+        </nav>
+         <Outlet />
         </div>
-        
+
+
 
 
      ) 

@@ -1,14 +1,14 @@
- import Patient from './components/Patient';
+ import Patient from './Patient';
  import axios from 'axios';
 import {useEffect, useState} from 'react';
 
 
-const PatientList = () => {
+const PatientsList = () => {
     const [patients ,set_patients] = useState(null);
 
     const getData = async () => {
         const response = await axios.get(`https://my-json-server.typicode.com/Codaisseur/patient-doctor-data/patients`);
-        console.log(response.data);
+        //console.log(response.data);
 
         
         set_patients(response.data);
@@ -23,9 +23,9 @@ const PatientList = () => {
                 <Patient 
                 key ={patient.id}
                id ={patient.id}  
-        FirstName= {patient.FirstName}
-        LastName={patient.LastName}
-        Birthday={patient.dateofbirth}
+        firstName= {patient.firstName}
+        lastName={patient.lastName}
+        Birthday={patient.dateOfBirth}
         />
         
 
@@ -35,10 +35,11 @@ const PatientList = () => {
     }
     return(
  <>
- (patients ?getPatientsData() : 'loding ..')
- </>
+ {patients ? getPatientsData() :'loding ..'}
+ 
+   </>
     )
 
 
  }
-  export default PatientList;
+  export default PatientsList;

@@ -6,8 +6,11 @@ const Patient =(props) =>{
     return(
       <>
       
-      <h1>{props.name}</h1>
-    <img src= {props.url} alt="oops no image"></img>      
+      <h1>{props.firstName}</h1>
+      <h2>{props.lastName}</h2>
+      <p>{props.id}</p>
+      <p>{props.dateOfBirth}</p>
+          
       </>        
     )
 }

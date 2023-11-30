@@ -1,14 +1,14 @@
 import Dogters  from './Dogters';
 
-import{useParams} from 'react-router-dom';
+//import{useParams} from 'react-router-dom';
 import React, {useState,useEffect}from 'react';
 import axios from "axios";
 
 const OnDuty =() =>{
     
-    const params =useParams();
-    const id = params.id;
-    console.log(id);
+    //const params =useParams();
+    //const id = params.id;
+    //console.log(id);
   const [dogtors ,set_dogtors]= useState([]);
   
   useEffect(() =>{
@@ -21,17 +21,37 @@ const OnDuty =() =>{
   doSomeDataFecting();
 },[]);
   
+const getCharactersComponents = () =>{
+
+return dogtors.map(( dogtor) => {
+  return(
+    <Dogters key ={dogtor.id}  
+            
+          dogtor={dogtor.dogtor}
+            
+            imageUrl={dogtor.imageUrl}
+            
+            onDuty={dogtor.onDuty}
+            id ={dogtor.id}
+
+    
+    />
+
+  )
+})
+}
+
+
+ 
+  
 return(
-<div>
-<ul>
-          {dogtors.map(dogtor =>(
-            <li key ={dogtor.id}>
-              {dogtor.name}-{dogtor.specialty}
-              <img src ={dogtors.imgUrl} alt ={dogtors.name}/>
-           </li>
-          ))}
-        </ul>
-    </div>
+<>
+          <h4> Who's on Duty:  </h4>
+            <div>
+              {dogtors ? getCharactersComponents() : 'loding..'} 
+      
+            </div>
+         </>   
     )
 
 }
