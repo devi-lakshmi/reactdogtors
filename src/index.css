@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@media screen and (min-width:769px){
+ .cocktail-data{
+  gap:2rem;
+  grid-template-columns:1fr 1fr 1fr;
+ } 
+} 
+nav {
+  padding: 20px;
+  background-color:lightblue;
+} 
+nav a{
+  margin-right: 20px;
+
+  
+}

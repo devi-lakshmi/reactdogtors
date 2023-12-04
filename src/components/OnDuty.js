@@ -31,7 +31,7 @@ return dogtors.map(( dogtor) => {
             
             imageUrl={dogtor.imageUrl}
             
-            onDuty={dogtor.onDuty}
+            onDuty={ dogtor.onDuty }
             id ={dogtor.id}
 
     

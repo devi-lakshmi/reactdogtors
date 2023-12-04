@@ -5,37 +5,50 @@ import {useState, useEffect} from 'react';
 const PatientsDetails = () => {
     const params = useParams();
     //console.log(params)
-    const id = params.id;
+    const id= params.id;
     console.log(id)
-
-    const [details, setDetails] = useState()
+    const [details, setDetails] = useState();
 
     const getDetails = async () => {
-        const response = await axios.get(`https://my-json-server.typicode.com/Codaisseur/patient-doctor-data/patients/5856675843`);
+        const response = await axios.get(`https://my-json-server.typicode.com/Codaisseur/patient-doctor-data/patients/${id}`);
         console.log(response.data);
         setDetails(response.data);
     }
 
     useEffect(() => {
         getDetails();
-    }, [])
-
-    return (
+    },[id] );
+ 
+ 
+ 
+return (
+      
         details ? 
             <>
-                <h1>{details.FirstName}</h1>
-                <h2>FirstName</h2>
-                <h1>{details.lasttName}</h1>
-                <h2>LastName</h2>
-                <h2>dateOfBirth</h2>
-                <p>{details.born}</p>
-                <h2>Gender</h2>
-                <p>{details.gender}</p>
+               <h2>Patient details for Id </h2>
+                <h1>{details.firstName}</h1>
+               
+                <h1>{details.lastName}</h1>
+               
                 
-                <img src={details.imgUrl} alt={details.name} />
-            </> :
+                <p>{details.dateOfBirth}</p>
+               
+                <p>{details.gender}</p>
+               <p>{details.email}</p>
+               <p>{details.phonenumber}</p>
+               
+               <p>{details.prescriptions}</p>
+                <ul>
+              { details.prescriptions.map((prescription, index) => (
+                <li key={index}>{prescription}</li>
+              ))}
+            </ul>
+            </> 
+        :
             'Loading...'
-    )
-}
+    
+)}
+
+                           
 
 export default PatientsDetails;

@@ -7,8 +7,9 @@ const Navbar =() => {
         <nav>
         <Link to ="/">Home</Link>
        
+       <Link to ="/patientlist/:patientId ">patientDetails</Link>
         </nav>
         </div>
-    )
+    );
 }
 export default Navbar;

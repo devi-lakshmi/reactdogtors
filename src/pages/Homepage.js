@@ -6,8 +6,9 @@ const Homepage =() =>{
             
          <h2>welcome to AMS GPs</h2>
         <nav>
-        <Link to ='/OnDuty'><button>Who is onduty</button></Link>
-        <Link to = '/patientlist'><button>Patients List</button></Link>
+        <Link to ='/OnDuty'>Who is onduty </Link>
+        <Link to = '/patientlist'>Patients List</Link>
+              
         </nav>
          <Outlet />
         </div>

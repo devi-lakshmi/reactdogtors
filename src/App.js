@@ -6,6 +6,10 @@ import Title from './components/Title';
 import { Routes,Route } from 'react-router-dom';
 import PatientsList from './components/PatientsList';
 import Navbar from './pages/Navbar';
+import PatientsDetails from './pages/PatientsDetails';
+
+
+
 
 const App= () => {
   
@@ -16,10 +20,12 @@ return (
     <Navbar />
       <Routes>
        <Route path ="/" element={<Homepage/>} >
-       <Route path ="/onduty" element={<OnDuty />} />
-       <Route path ='/patientslist' element={<PatientsList/>} />
+       <Route path ="onDuty" element={<OnDuty/>} />
+       <Route path ='patientlist' element={<PatientsList/>} />
       </Route>
-      </Routes> 
+      <Route path = '/patientlist/:id' element={<PatientsDetails/>} />
+           
+    </Routes> 
      
      
  
