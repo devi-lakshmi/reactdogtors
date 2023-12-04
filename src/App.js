@@ -7,6 +7,7 @@ import { Routes,Route } from 'react-router-dom';
 import PatientsList from './components/PatientsList';
 import Navbar from './pages/Navbar';
 import PatientsDetails from './pages/PatientsDetails';
+import PatientSignUpForm from './components/PatientSignUpForm';
 
 
 
@@ -27,7 +28,7 @@ return (
            
     </Routes> 
      
-     
+     <PatientSignUpForm />
  
     </div>
   );
