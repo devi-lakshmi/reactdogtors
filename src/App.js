@@ -25,10 +25,10 @@ return (
        <Route path ='patientlist' element={<PatientsList/>} />
       </Route>
       <Route path = '/patientlist/:id' element={<PatientsDetails/>} />
-           
+      < Route path ="/patientSignUpForm" element ={<PatientSignUpForm />} />    
     </Routes> 
      
-     <PatientSignUpForm />
+
  
     </div>
   );

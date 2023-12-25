@@ -3,6 +3,7 @@ import Dogters  from './Dogters';
 //import{useParams} from 'react-router-dom';
 import React, {useState,useEffect}from 'react';
 import axios from "axios";
+import PractiseStatus from './PractiseStatus';
 
 const OnDuty =() =>{
     
@@ -25,6 +26,7 @@ const getCharactersComponents = () =>{
 
 return dogtors.map(( dogtor) => {
   return(
+     
     <Dogters key ={dogtor.id}  
             
           dogtor={dogtor.dogtor}
@@ -37,7 +39,8 @@ return dogtors.map(( dogtor) => {
     
     />
 
-  )
+
+    )
 })
 }
 
@@ -51,6 +54,7 @@ return(
               {dogtors ? getCharactersComponents() : 'loding..'} 
       
             </div>
+          < PractiseStatus />
          </>   
     )
 
